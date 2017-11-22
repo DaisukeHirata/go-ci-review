@@ -7,5 +7,5 @@ func main() {
 }
 
 func sayHello() {
-    fmt.Println("Hello world!! 32")
+    fmt.Println("Hello world!! fumi-1.1")
 }
