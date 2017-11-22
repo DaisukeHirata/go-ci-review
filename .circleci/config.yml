@@ -7,6 +7,9 @@ jobs:
     docker:
       # specify the version
       - image: circleci/golang:1.8
+        # set reviewdoc version - fumi
+        environment:
+         REVIEWDOG_VERSION: 0.9.8
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -20,6 +23,11 @@ jobs:
     working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
     steps:
       - checkout
+
+      # install reviewdoc - fumi
+      - run:
+         name: install reviewdoc
+         command : curl -fSL https://github.com/haya14busa/reviewdog/releases/download/$REVIEWDOG_VERSION/reviewdog_linux_amd64 -o reviewdog && chmod +x ./reviewdog
 
       # specify any bash command here prefixed with `run: `
       - run: go get -v -t -d ./...
