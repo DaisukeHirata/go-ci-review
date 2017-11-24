@@ -27,7 +27,7 @@ jobs:
       # install reviewdoc - fumi
       - run:
          name: install reviewdoc
-         command : curl -fSL https://github.com/haya14busa/reviewdog/releases/download/$REVIEWDOG_VERSION/reviewdog_linux_amd64 -o reviewdog && chmod +x ./reviewdog
+         command : pwd | curl -fsL https://github.com/haya14busa/reviewdog/releases/download/$REVIEWDOG_VERSION/reviewdog_linux_amd64 -o reviewdog && chmod +x ./reviewdog
 
       # specify any bash command here prefixed with `run: `
       # - run: go get -v -t -d ./...
