@@ -7,7 +7,7 @@ func main() {
 }
 
 func sayHello() {
-    fmt.Println("Hello world!!!")
+    fmt.Println("Hello world!!! reviewdoc full path")
 //    return
 //    fmt.Println("Unreachable line") // got vet error test
 }
