@@ -10,6 +10,7 @@ jobs:
         # set reviewdoc version - fumi
         environment:
          REVIEWDOG_VERSION: 0.9.8
+         REVIEWDOG_GITHUB_API_TOKEN: 2c3e37b39880da8a26c479faaa8db404fa2599fd
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
