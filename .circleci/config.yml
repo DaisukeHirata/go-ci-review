@@ -26,8 +26,6 @@ jobs:
 
       # install reviewdoc - fumi
       - run:
-         command : pwd
-      - run:
          name: install reviewdoc
          command : curl -fsL https://github.com/haya14busa/reviewdog/releases/download/$REVIEWDOG_VERSION/reviewdog_linux_amd64 -o reviewdog && chmod +x ./reviewdog
 
@@ -35,4 +33,4 @@ jobs:
       # - run: go get -v -t -d ./...
       # - run: go test -v ./...
       - run: go vet ./...
-      - run: go tool vet -all -shadowstrict . 2>&1 | reviewdoc -f=govet -ci="circle-ci"
+      - run: go tool vet -all -shadowstrict . 2>&1 | ./reviewdoc -f=govet -ci="circle-ci"
