@@ -7,7 +7,7 @@ func main() {
 }
 
 func sayHello() {
-    fmt.Println("Hello world!!! reviewdog command updated")
+    fmt.Println("Hello world!!! reviewdog "pi token added)
 //    return
 //    fmt.Println("Unreachable line") // got vet error test
 }
