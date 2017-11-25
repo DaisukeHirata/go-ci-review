@@ -7,7 +7,7 @@ func main() {
 }
 
 func sayHello() {
-    fmt.Println("Hello world!!! circle ci - api added")
+    fmt.Println("Hello world!!! circle ci - api token deleted")
 //    return
 //    fmt.Println("Unreachable line") // got vet error test
 }
