@@ -10,7 +10,6 @@ jobs:
         # set reviewdoc version - fumi
         environment:
          REVIEWDOG_VERSION: 0.9.8
-         REVIEWDOG_GITHUB_API_TOKEN: 2bca5f3e016262add7448c38ab0dcec277e96bda 
          GITHUB_API: https://api.github.com
       
       # Specify service dependencies here if necessary
