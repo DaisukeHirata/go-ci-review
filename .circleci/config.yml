@@ -36,4 +36,5 @@ jobs:
       # - run: go vet ./...
       - run: go tool vet -all -shadowstrict . 2>&1 | ./reviewdog -f=govet -ci="circle-ci"
       # - run: go tool vet -all -shadowstrict . 2>&1 | /go/src/githu.com/{{ORG_NAME}}/{{REPO_NAME}}/reviewdoc -f=govet -ci="circle-ci"
-      - run: gofmt .
+      - run: ./reviewdog -list
+      - run: gofmt -d .
