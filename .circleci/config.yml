@@ -28,7 +28,11 @@ jobs:
       # install reviewdoc - fumi
       - run:
          name: install reviewdoc
-         command : curl -fsL https://github.com/haya14busa/reviewdog/releases/download/$REVIEWDOG_VERSION/reviewdog_linux_amd64 -o reviewdog && chmod +x ./reviewdog
+         command: curl -fsL https://github.com/haya14busa/reviewdog/releases/download/$REVIEWDOG_VERSION/reviewdog_linux_amd64 -o reviewdog && chmod +x ./reviewdog
+      # install golint - fumi
+      - run:
+         name: install golint
+         command: go get github.com/golang/lint/golint
 
       # specify any bash command here prefixed with `run: `
       # - run: go get -v -t -d ./...
@@ -36,5 +40,6 @@ jobs:
       # - run: go vet ./...
       - run: go tool vet -all -shadowstrict . 2>&1 | ./reviewdog -f=govet -ci="circle-ci"
       # - run: go tool vet -all -shadowstrict . 2>&1 | /go/src/githu.com/{{ORG_NAME}}/{{REPO_NAME}}/reviewdoc -f=govet -ci="circle-ci"
-      - run: ./reviewdog -list
       - run: gofmt -d .
+      - run: golint ./...
+
