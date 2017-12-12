@@ -1,24 +1,22 @@
-package cart
+package main
 
 import "testing"
 
-func TestAddAndGetProductsInCarrt(t *testing.T) {
-       c := New()
-       c.Add("りんご")
-       c.Add("みかん")
+func TestAddAndGetProductsInCart (t *testing.T) {
+	c := New()
+	c.Add("Apple")
+//	c.Add("Orange")
 
-       products := c.GetAll()
-       if len(products) != 2 {
-        t.Fatalf("商品の数が想定と違う。(商品数 :%d)", len(products))
-       }
-       if products[0] != "りんご" && products[1] != "りんご" {
-        t.Error("りんごがカートに入っていない。")
-        t.Log("カートの中身：", products)
-       }
-       if products[0] != "みかん" && products[1] != "みかん" {
-        t.Error("みかんがカートに入っていない。")
-        t.Log("カートの中身：", products)
-       }
-
+	products := c.GetAll()
+	if len(products) !=2 {
+		t.Fatalf("The number of products is not correct.（Num of products : %d）", len(products))
+	}
+	if products[0] != "Apple" && products[1] != "Apple" {
+		t.Error("Apple is not in the cart.")
+		t.Log("Contents of the cart:", products)
+	}
+	if products[0] != "Orange" && products[1] != "Orange" {
+		t.Error("Orange is not in the cart.")
+		t.Log("Contents of the cart:", products)
+	}
 }
-
