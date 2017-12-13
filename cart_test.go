@@ -5,7 +5,7 @@ import "testing"
 func TestAddAndGetProductsInCart (t *testing.T) {
 	c := New()
 	c.Add("Apple")
-//	c.Add("Orange")
+	c.Add("Grape")
 
 	products := c.GetAll()
 	if len(products) !=2 {
