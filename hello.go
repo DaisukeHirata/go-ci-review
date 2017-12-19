@@ -7,7 +7,7 @@ func main() {
 }
 
 func SayHello() {
- fmt.Println("Hello world!!") // gofmt test
-//    return
-//    fmt.Println("Unreachable line") // got vet error test
+// fmt.Println("Hello world!!") // gofmt test
+    return
+    fmt.Println("Unreachable line") // got vet error test
 }
