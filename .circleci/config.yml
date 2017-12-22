@@ -34,6 +34,7 @@ jobs:
          name: install golint
          command: go get github.com/golang/lint/golint
       # install unused -fumi
+      - run:
          name: install unused
          command: go get honnef.co/go/tools/cmd/unused
 
@@ -44,8 +45,8 @@ jobs:
       # - run: gofmt -d .
       # - run: unused -help
 
-      - run: go test -run ''
+      # - run: go test -run ''
       # - run: go test ./...
       - run: go tool vet -all -shadowstrict . 2>&1 | ./reviewdog -f=govet -ci="circle-ci"
-      - run: golint ./... | ./reviewdog -f=golint -diff="git diff master" -ci="circle-ci"
+      - run: golint ./... | ./reviewdog -f=golint -ci="circle-ci"
 
